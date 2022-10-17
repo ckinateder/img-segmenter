@@ -46,8 +46,9 @@ def split_into_quarters(img: np.ndarray)->dict:
     }
     return imgs
 
-img = grab_image("https://instrumentationtools.com/wp-content/uploads/2018/10/Circuit-Diagram-Schematic.png")
-cv2.imwrite("original.png", img)
-q = split_into_quarters(img)
-for i in q:
-    cv2.imwrite(f"{i}.png",q[i]["img"])
+if __name__ == "__main__":
+    img = grab_image("https://instrumentationtools.com/wp-content/uploads/2018/10/Circuit-Diagram-Schematic.png")
+    cv2.imwrite("original.png", img)
+    q = split_into_quarters(img)
+    for i in q:
+        cv2.imwrite(f"{i}.png",q[i]["img"])
